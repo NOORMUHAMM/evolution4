@@ -92,26 +92,24 @@ data.forEach(element => {
    prepairTime.innerHTML=`PREPAIR TIME :${element.prepairTime}`
    var btn=document.createElement("button")
    btn.innerHTML=`Add to Cart`
-   div1.append(image,price,discription,prepairTime,btn);
-   var btn=document.createElement("button")
    btn.onclick=function(){
        addTOcart(element)
    }
+   div1.append(image,price,discription,prepairTime,btn);
    div.appendChild(div1)
    })
 function addTOcart(element){
-    let add;
+    let favarr;
     let arr;
-    add=localStorage.getItem("fav")
-    if(add==null){
+    favarr=localStorage.getItem("fav")
+    if(favarr==null){
         arr=[]
     }
     else{
         arr=JSON.parse(localStorage.getItem("fav"))
     }
     arr.push(element)
-    localStorage.setItem("foo",JSON.stringify(arr))
-    console.log(add);
+    localStorage.setItem("fav",JSON.stringify(arr))
 
 }
    
